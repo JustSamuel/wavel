@@ -1,0 +1,31 @@
+{
+  "name": "wavel",
+  "version": "1.0.0",
+  "description": "Electron based application that turns sound into color with Arduino support.",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^9.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustSamuel/wavel.git"
+  },
+  "keywords": [
+    "FFT",
+    "Electron",
+    "sound",
+    "arduino",
+    "color",
+    "organ"
+  ],
+  "author": "Samuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustSamuel/wavel/issues"
+  },
+  "homepage": "https://github.com/JustSamuel/wavel#readme"
+}
