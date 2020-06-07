@@ -2,13 +2,39 @@
   "name": "wavel",
   "version": "1.0.0",
   "description": "Electron based application that turns sound into color with Arduino support.",
-  "main": "main.js",
-  "dependencies": {},
-  "devDependencies": {
-    "electron": "^9.0.2"
+  "main": "app/main.js",
+  "build": {
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "resources"
+    },
+    "publish": null
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "electron-builder install-app-deps",
+    "start": "node build/start.js",
+    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
+  },
+  "dependencies": {
+    "fs-jetpack": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.0-beta.4",
+    "css-loader": "^3.1.0",
+    "electron": "^8.2.3",
+    "electron-builder": "^22.5.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "source-map-support": "^0.5.6",
+    "style-loader": "^1.1.4",
+    "webpack": "^4.38.0",
+    "webpack-merge": "^4.1.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "repository": {
     "type": "git",
@@ -19,11 +45,10 @@
     "Electron",
     "sound",
     "arduino",
-    "color",
-    "organ"
+    "color organ"
   ],
   "author": "Samuel",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/JustSamuel/wavel/issues"
   },
