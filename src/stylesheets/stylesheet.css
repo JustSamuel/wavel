@@ -1,0 +1,32 @@
+@import "~roboto-fontface/css/roboto/roboto-fontface.css";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #121212;
+}
+
+/* WINDOW STYLING */
+
+.window-title {
+    font-size: 13px !important;
+    font-family: Roboto-Bold, serif;
+    color: #0d2c77 !important;
+}
+
+.window-icon {
+    background-color: #0d2c77 !important;
+}
+
+/* APP STYLING*/
+
+.container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}

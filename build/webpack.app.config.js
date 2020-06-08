@@ -8,6 +8,7 @@ module.exports = env => {
         // Create the entry points.
         entry: {
             main: "./src/main.js",
+            renderer: "./src/renderer.js"
         },
         output: {
             filename: "[name].js",

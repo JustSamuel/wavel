@@ -27,6 +27,12 @@ module.exports = env => {
     },
     externals: [nodeExternals()],
     devtool: "source-map",
+    resolve: {
+      alias: {
+        // Creates env variable representing current mode.
+        env: path.resolve(__dirname, `../config/env_${env}.json`)
+      }
+    },
     module: {
       rules: [
         {
@@ -37,8 +43,20 @@ module.exports = env => {
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
+        },
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/'
+              }
+            }
+          ]
         }
-      ]
+      ],
     },
     plugins: [
       new FriendlyErrorsWebpackPlugin({ clearConsole: env === "development" })
